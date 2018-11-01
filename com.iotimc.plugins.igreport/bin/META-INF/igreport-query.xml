@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml>
+
+	<!-- 获取所有的报表列表 -->
+	<hql key="igreport.ctrl.getReportList">
+		<sentence>
+			select new Map(
+				igreport.id as id,
+				igreport.code as code,
+				igreport.name as name,
+				igreport.idx as idx,
+				igreport.dataname as dataname,
+				igreport.img as img,
+				igreport.cretime as cretime,
+				igreport.modtime as modtime
+			)
+			from Igreport igreport
+			where status=:status
+			order by igreport.modtime desc, igreport.code
+		</sentence>
+		<params>
+			<param name="status" datatype="java.lang.String" value="P"/>
+		</params>
+	</hql>
+	
+	<!-- 获取所有的报表列表 -->
+	<hql key="igreport.ctrl.getReportEntityList">
+		<sentence>
+			select igreport
+			from Igreport igreport
+			where status=:status
+		</sentence>
+		<params>
+			<param name="status" datatype="java.lang.String" value="P"/>
+		</params>
+	</hql>
+
+
+	<!-- 获取报表的数据集合名 -->
+	<hql key="igreport.ctrl.getReportDatanameList">
+		<sentence>
+			select distinct igreport.dataname
+			from Igreport igreport
+			where status=:status
+		</sentence>
+		<params>
+			<param name="status" datatype="java.lang.String" value="P"/>
+		</params>
+	</hql>
+
+</xml>

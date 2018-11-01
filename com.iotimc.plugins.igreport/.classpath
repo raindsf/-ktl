@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.virgo.ide.jdt.core.MANIFEST_CLASSPATH_CONTAINER"/>
+	<classpathentry kind="lib" path="src/META-INF/lib/json-simple-1.1.jar"/>
+	<classpathentry kind="lib" path="src/META-INF/lib/kettle-core-6.1.0.1-196.jar"/>
+	<classpathentry kind="lib" path="src/META-INF/lib/kettle-dbdialog-6.1.0.1-196.jar"/>
+	<classpathentry kind="lib" path="src/META-INF/lib/kettle-engine-6.1.0.1-196.jar"/>
+	<classpathentry kind="lib" path="src/META-INF/lib/mysql.jar"/>
+	<classpathentry kind="lib" path="src/META-INF/lib/metastore-6.1.0.1-196.jar"/>
+	<classpathentry kind="lib" path="src/META-INF/lib/json-path-2.2.0.jar"/>
+	<classpathentry kind="lib" path="src/META-INF/lib/json-smart-2.2.jar"/>
+	<classpathentry kind="lib" path="src/META-INF/lib/ojdbc6.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

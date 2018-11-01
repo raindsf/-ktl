@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="com.iotimc.plugins.igreport" default="bundle.jar" basedir="../">
+	
+	<!--bundle的id-->
+	<property name="bundle.id" value="com.iotimc.plugins.igreport" />
+	<!--bundle的版本-->
+	<property name="bundle.version" value="1.0.0"/>
+	<!--bundle的输出目标目录-->
+	<property name="target.dir" value="D:/build"/>
+	
+	<!--bundle的jar文件名-->
+	<property name="target.file.jar" value="${target.dir}/${bundle.id}-${bundle.version}.jar"/>
+	<!--bundle的java-source文件名-->
+	<property name="target.file.source" value="${target.dir}/${bundle.id}-sources-${bundle.version}.jar"/>
+	<!--bundle的项目文件名，此项目可以直接通过eclipse的import菜单import进来-->
+	<property name="target.file.project" value="${target.dir}/${bundle.id}-${bundle.version}-project.jar"/>
+	
+	<target name="bundle.all" depends="bundle.jar_and_source,bundle.project" description="导出所有，包括jar包、源代码及整个项目">
+	</target>
+	
+	<target name="bundle.jar_and_source" depends="bundle.jar,bundle.source" description="导出jar包及源代码">
+	</target>
+	
+	<target name="bundle.jar" description="导出${bundle.id}到${target.file.jar}">
+		<delete file="${target.file.jar}"/>
+		<jar destfile="${target.file.jar}" 
+			manifest="${basedir}\bin\META-INF\MANIFEST.MF">
+			<zipfileset dir="${basedir}\bin"/>
+		</jar>
+	</target>
+	
+	<target name="bundle.source" description="导出${bundle.id}java文件到${target.file.source}">
+		<delete file="${target.file.source}"/>
+		<zip destfile="${target.file.source}" filesonly="false" whenempty="skip" update="false">
+			<fileset dir="src/">
+				<include name="**/*.java"/>
+			</fileset>
+		</zip>
+	</target>
+	
+	<target name="bundle.project" description="导出${bundle.id}项目到${target.file.project}">
+		<delete file="${target.file.project}"/>
+		<zip destfile="${target.file.project}">
+			<fileset dir="${basedir}">
+			</fileset>
+		</zip>
+	</target>
+	
+</project>
